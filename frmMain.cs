@@ -56,5 +56,23 @@ namespace pryMarconiEDpresentacion
             frmArbolBinario v = new frmArbolBinario();
             v.ShowDialog();
         }
+
+        private void operacionesConTablasDeBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBD f = new frmBD();
+            f.Show();
+        }
+
+        private void consultaEnLaBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsulta a = new frmConsulta();
+            a.Show();
+        }
+
+        private void repasoDeOperacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmRepaso a = new frmRepaso();
+            a.Show();
+        }
     }
 }
