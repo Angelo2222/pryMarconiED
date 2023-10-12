@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvListar = new System.Windows.Forms.DataGridView();
-            this.txtListar = new System.Windows.Forms.RichTextBox();
             this.btnListar = new System.Windows.Forms.Button();
             this.cmbListar = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblEnunciado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,15 +44,6 @@
             this.dgvListar.Size = new System.Drawing.Size(944, 309);
             this.dgvListar.TabIndex = 9;
             // 
-            // txtListar
-            // 
-            this.txtListar.Enabled = false;
-            this.txtListar.Location = new System.Drawing.Point(12, 36);
-            this.txtListar.Name = "txtListar";
-            this.txtListar.Size = new System.Drawing.Size(944, 136);
-            this.txtListar.TabIndex = 8;
-            this.txtListar.Text = "";
-            // 
             // btnListar
             // 
             this.btnListar.Location = new System.Drawing.Point(860, 7);
@@ -61,38 +52,59 @@
             this.btnListar.TabIndex = 7;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // cmbListar
             // 
             this.cmbListar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbListar.FormattingEnabled = true;
+            this.cmbListar.Items.AddRange(new object[] {
+            "Diferencia",
+            "Interseccion",
+            "Proyeccion Simple",
+            "Proyeccion Multiatributo",
+            "Seleccion Multiatributo con operador AND",
+            "Seleccion Multiatributo con operador OR",
+            "Seleccion Multiatributo por Convolucion",
+            "Seleccion Simple",
+            "Union"});
             this.cmbListar.Location = new System.Drawing.Point(292, 7);
             this.cmbListar.Name = "cmbListar";
             this.cmbListar.Size = new System.Drawing.Size(562, 21);
             this.cmbListar.TabIndex = 6;
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 18);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Operación a realizar en la base de datos:";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(9, 6);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(277, 18);
+            this.lblTitulo.TabIndex = 5;
+            this.lblTitulo.Text = "Operación a realizar en la base de datos:";
+            // 
+            // lblEnunciado
+            // 
+            this.lblEnunciado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEnunciado.Enabled = false;
+            this.lblEnunciado.Location = new System.Drawing.Point(12, 48);
+            this.lblEnunciado.Name = "lblEnunciado";
+            this.lblEnunciado.Size = new System.Drawing.Size(944, 127);
+            this.lblEnunciado.TabIndex = 10;
             // 
             // frmRepaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 495);
+            this.ClientSize = new System.Drawing.Size(963, 495);
+            this.Controls.Add(this.lblEnunciado);
             this.Controls.Add(this.dgvListar);
-            this.Controls.Add(this.txtListar);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.cmbListar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitulo);
             this.Name = "frmRepaso";
             this.Text = "Repaso";
+            this.Load += new System.EventHandler(this.frmRepaso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,9 +114,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvListar;
-        private System.Windows.Forms.RichTextBox txtListar;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.ComboBox cmbListar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblEnunciado;
     }
 }
